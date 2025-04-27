@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
+#include "ball_chaser/DriveToTarget.h"
 //TODO: Include the ball_chaser "DriveToTarget" header file
 
 // ROS::Publisher motor commands;
@@ -9,7 +10,7 @@ ros::Publisher motor_command_publisher;
 // This function should publish the requested linear x and angular velocities to the robot wheel joints
 // After publishing the requested velocities, a message feedback should be returned with the requested wheel velocities
 
-bool handle_command_robot(drive_bot::DriveToTarget::Request& req, drive_bot:DriveToTarget::Response& res) 
+bool handle_command_robot(ball_chaser::DriveToTarget::Request& req, ball_chaser::DriveToTarget::Response& res) 
 {
     geometry_msgs::Twist motor_command;
     // Set wheel velocities, forward [0.5, 0.0]
@@ -20,9 +21,9 @@ bool handle_command_robot(drive_bot::DriveToTarget::Request& req, drive_bot:Driv
 
     ros::Duration(3).sleep();
 
-    res.msg_feedback = "linear_x + " std::to_string(req.linear_x) + ", angular_x " + std::to_string(req.angular_x);
+    res.msg_feedback = "linear_x + " + std::to_string(req.linear_x) + ", angular_x " + std::to_string(req.angular_x);
 
-    ROS_INFO_STREAM(res.msg_feedback)
+    ROS_INFO_STREAM(res.msg_feedback);
 
     return true;
 }
@@ -30,7 +31,7 @@ bool handle_command_robot(drive_bot::DriveToTarget::Request& req, drive_bot:Driv
 int main(int argc, char** argv)
 {
         // Initialize a ROS node
-        ros::init(argc, argv, "drive_bot");
+        ros::init(argc, argv, "ball_chaser");
 
         // Create a ROS NodeHandle object
         ros::NodeHandle n;
