@@ -51,7 +51,7 @@ find_package(catkin REQUIRED)
 
 ## Generate services in the 'srv' folder
  add_service_files(
-#   FILES
+   FILES
    DriveToTarget.srv
 #   Service2.srv
  )
