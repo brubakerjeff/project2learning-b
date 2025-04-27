@@ -63,6 +63,7 @@
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_geneus.dir
+/home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_generate_messages_cpp.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/std_msgs_generate_messages_py.dir
@@ -75,6 +76,5 @@
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_generate_messages_lisp.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_genlisp.dir
-/home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_node.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /home/jeffoldubuntu/catkin_ws/build/ball_chaser/CMakeFiles/test.dir

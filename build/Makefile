@@ -493,6 +493,19 @@ ball_chaser_geneus/fast:
 .PHONY : ball_chaser_geneus/fast
 
 #=============================================================================
+# Target rules for targets named ball_chaser
+
+# Build rule for target.
+ball_chaser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser
+.PHONY : ball_chaser
+
+# fast build rule for target.
+ball_chaser/fast:
+	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser.dir/build.make ball_chaser/CMakeFiles/ball_chaser.dir/build
+.PHONY : ball_chaser/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -636,19 +649,6 @@ ball_chaser_genlisp/fast:
 .PHONY : ball_chaser_genlisp/fast
 
 #=============================================================================
-# Target rules for targets named ball_chaser_node
-
-# Build rule for target.
-ball_chaser_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_node
-.PHONY : ball_chaser_node
-
-# fast build rule for target.
-ball_chaser_node/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_node.dir/build.make ball_chaser/CMakeFiles/ball_chaser_node.dir/build
-.PHONY : ball_chaser_node/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -699,6 +699,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... ball_chaser_geneus"
+	@echo "... ball_chaser"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... ball_chaser_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_py"
@@ -710,7 +711,6 @@ help:
 	@echo "... ball_chaser_generate_messages_lisp"
 	@echo "... ball_chaser_gennodejs"
 	@echo "... ball_chaser_genlisp"
-	@echo "... ball_chaser_node"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 .PHONY : help
 

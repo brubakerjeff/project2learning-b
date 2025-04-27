@@ -393,6 +393,21 @@ ball_chaser_geneus/fast:
 .PHONY : ball_chaser_geneus/fast
 
 # Convenience name for target.
+ball_chaser/CMakeFiles/ball_chaser.dir/rule:
+	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/ball_chaser.dir/rule
+.PHONY : ball_chaser/CMakeFiles/ball_chaser.dir/rule
+
+# Convenience name for target.
+ball_chaser: ball_chaser/CMakeFiles/ball_chaser.dir/rule
+
+.PHONY : ball_chaser
+
+# fast build rule for target.
+ball_chaser/fast:
+	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser.dir/build.make ball_chaser/CMakeFiles/ball_chaser.dir/build
+.PHONY : ball_chaser/fast
+
+# Convenience name for target.
 ball_chaser/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : ball_chaser/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
@@ -558,21 +573,6 @@ ball_chaser_genlisp/fast:
 .PHONY : ball_chaser_genlisp/fast
 
 # Convenience name for target.
-ball_chaser/CMakeFiles/ball_chaser_node.dir/rule:
-	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/ball_chaser_node.dir/rule
-.PHONY : ball_chaser/CMakeFiles/ball_chaser_node.dir/rule
-
-# Convenience name for target.
-ball_chaser_node: ball_chaser/CMakeFiles/ball_chaser_node.dir/rule
-
-.PHONY : ball_chaser_node
-
-# fast build rule for target.
-ball_chaser_node/fast:
-	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_node.dir/build.make ball_chaser/CMakeFiles/ball_chaser_node.dir/build
-.PHONY : ball_chaser_node/fast
-
-# Convenience name for target.
 ball_chaser/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : ball_chaser/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -593,7 +593,7 @@ src/drive_bot.o: src/drive_bot.cpp.o
 
 # target to build an object file
 src/drive_bot.cpp.o:
-	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_node.dir/build.make ball_chaser/CMakeFiles/ball_chaser_node.dir/src/drive_bot.cpp.o
+	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser.dir/build.make ball_chaser/CMakeFiles/ball_chaser.dir/src/drive_bot.cpp.o
 .PHONY : src/drive_bot.cpp.o
 
 src/drive_bot.i: src/drive_bot.cpp.i
@@ -602,7 +602,7 @@ src/drive_bot.i: src/drive_bot.cpp.i
 
 # target to preprocess a source file
 src/drive_bot.cpp.i:
-	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_node.dir/build.make ball_chaser/CMakeFiles/ball_chaser_node.dir/src/drive_bot.cpp.i
+	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser.dir/build.make ball_chaser/CMakeFiles/ball_chaser.dir/src/drive_bot.cpp.i
 .PHONY : src/drive_bot.cpp.i
 
 src/drive_bot.s: src/drive_bot.cpp.s
@@ -611,7 +611,7 @@ src/drive_bot.s: src/drive_bot.cpp.s
 
 # target to generate assembly for a file
 src/drive_bot.cpp.s:
-	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_node.dir/build.make ball_chaser/CMakeFiles/ball_chaser_node.dir/src/drive_bot.cpp.s
+	cd /home/jeffoldubuntu/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/ball_chaser.dir/build.make ball_chaser/CMakeFiles/ball_chaser.dir/src/drive_bot.cpp.s
 .PHONY : src/drive_bot.cpp.s
 
 # Help Target
@@ -640,6 +640,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... ball_chaser_geneus"
+	@echo "... ball_chaser"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... ball_chaser_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_py"
@@ -652,7 +653,6 @@ help:
 	@echo "... ball_chaser_generate_messages_lisp"
 	@echo "... ball_chaser_gennodejs"
 	@echo "... ball_chaser_genlisp"
-	@echo "... ball_chaser_node"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... test"
 	@echo "... src/drive_bot.o"
