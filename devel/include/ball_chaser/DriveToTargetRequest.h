@@ -25,11 +25,11 @@ struct DriveToTargetRequest_
 
   DriveToTargetRequest_()
     : linear_x(0.0)
-    , angular_x(0.0)  {
+    , angular_z(0.0)  {
     }
   DriveToTargetRequest_(const ContainerAllocator& _alloc)
     : linear_x(0.0)
-    , angular_x(0.0)  {
+    , angular_z(0.0)  {
   (void)_alloc;
     }
 
@@ -38,8 +38,8 @@ struct DriveToTargetRequest_
    typedef double _linear_x_type;
   _linear_x_type linear_x;
 
-   typedef double _angular_x_type;
-  _angular_x_type angular_x;
+   typedef double _angular_z_type;
+  _angular_z_type angular_z;
 
 
 
@@ -71,7 +71,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::ball_chaser::DriveToTargetRequest_<ContainerAllocator1> & lhs, const ::ball_chaser::DriveToTargetRequest_<ContainerAllocator2> & rhs)
 {
   return lhs.linear_x == rhs.linear_x &&
-    lhs.angular_x == rhs.angular_x;
+    lhs.angular_z == rhs.angular_z;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -128,12 +128,12 @@ struct MD5Sum< ::ball_chaser::DriveToTargetRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4347bced3938630972acf1f24a183596";
+    return "6aa08055c0c4aea51799f3f7164796a8";
   }
 
   static const char* value(const ::ball_chaser::DriveToTargetRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4347bced39386309ULL;
-  static const uint64_t static_value2 = 0x72acf1f24a183596ULL;
+  static const uint64_t static_value1 = 0x6aa08055c0c4aea5ULL;
+  static const uint64_t static_value2 = 0x1799f3f7164796a8ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,7 +153,7 @@ struct Definition< ::ball_chaser::DriveToTargetRequest_<ContainerAllocator> >
   static const char* value()
   {
     return "float64 linear_x\n"
-"float64 angular_x\n"
+"float64 angular_z\n"
 ;
   }
 
@@ -173,7 +173,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.linear_x);
-      stream.next(m.angular_x);
+      stream.next(m.angular_z);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -194,8 +194,8 @@ struct Printer< ::ball_chaser::DriveToTargetRequest_<ContainerAllocator> >
   {
     s << indent << "linear_x: ";
     Printer<double>::stream(s, indent + "  ", v.linear_x);
-    s << indent << "angular_x: ";
-    Printer<double>::stream(s, indent + "  ", v.angular_x);
+    s << indent << "angular_z: ";
+    Printer<double>::stream(s, indent + "  ", v.angular_z);
   }
 };
 

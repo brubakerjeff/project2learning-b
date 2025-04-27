@@ -15,13 +15,13 @@ bool handle_command_robot(ball_chaser::DriveToTarget::Request& req, ball_chaser:
     geometry_msgs::Twist motor_command;
     // Set wheel velocities, forward [0.5, 0.0]
     motor_command.linear.x = req.linear_x;
-    motor_command.angular.z = req.angular_x;
+    motor_command.angular.z = req.angular_z;
     // Publish angles to drive the robot
     motor_command_publisher.publish(motor_command);
 
     ros::Duration(3).sleep();
 
-    res.msg_feedback = "linear_x + " + std::to_string(req.linear_x) + ", angular_x " + std::to_string(req.angular_x);
+    res.msg_feedback = "linear_x + " + std::to_string(req.linear_x) + ", angular_z " + std::to_string(req.angular_z);
 
     ROS_INFO_STREAM(res.msg_feedback);
 

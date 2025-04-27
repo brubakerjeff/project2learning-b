@@ -12,9 +12,9 @@
     :initarg :linear_x
     :type cl:float
     :initform 0.0)
-   (angular_x
-    :reader angular_x
-    :initarg :angular_x
+   (angular_z
+    :reader angular_z
+    :initarg :angular_z
     :type cl:float
     :initform 0.0))
 )
@@ -32,10 +32,10 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ball_chaser-srv:linear_x-val is deprecated.  Use ball_chaser-srv:linear_x instead.")
   (linear_x m))
 
-(cl:ensure-generic-function 'angular_x-val :lambda-list '(m))
-(cl:defmethod angular_x-val ((m <DriveToTarget-request>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ball_chaser-srv:angular_x-val is deprecated.  Use ball_chaser-srv:angular_x instead.")
-  (angular_x m))
+(cl:ensure-generic-function 'angular_z-val :lambda-list '(m))
+(cl:defmethod angular_z-val ((m <DriveToTarget-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ball_chaser-srv:angular_z-val is deprecated.  Use ball_chaser-srv:angular_z instead.")
+  (angular_z m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <DriveToTarget-request>) ostream)
   "Serializes a message object of type '<DriveToTarget-request>"
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'linear_x))))
@@ -47,7 +47,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_x))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'angular_z))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -78,7 +78,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'angular_x) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'angular_z) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<DriveToTarget-request>)))
@@ -89,16 +89,16 @@
   "ball_chaser/DriveToTargetRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<DriveToTarget-request>)))
   "Returns md5sum for a message object of type '<DriveToTarget-request>"
-  "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+  "c8652349d2a34a90a09475339e2a93d9")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'DriveToTarget-request)))
   "Returns md5sum for a message object of type 'DriveToTarget-request"
-  "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+  "c8652349d2a34a90a09475339e2a93d9")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DriveToTarget-request>)))
   "Returns full string definition for message of type '<DriveToTarget-request>"
-  (cl:format cl:nil "float64 linear_x~%float64 angular_x~%~%~%"))
+  (cl:format cl:nil "float64 linear_x~%float64 angular_z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'DriveToTarget-request)))
   "Returns full string definition for message of type 'DriveToTarget-request"
-  (cl:format cl:nil "float64 linear_x~%float64 angular_x~%~%~%"))
+  (cl:format cl:nil "float64 linear_x~%float64 angular_z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <DriveToTarget-request>))
   (cl:+ 0
      8
@@ -108,7 +108,7 @@
   "Converts a ROS message object to a list"
   (cl:list 'DriveToTarget-request
     (cl:cons ':linear_x (linear_x msg))
-    (cl:cons ':angular_x (angular_x msg))
+    (cl:cons ':angular_z (angular_z msg))
 ))
 ;//! \htmlinclude DriveToTarget-response.msg.html
 
@@ -161,10 +161,10 @@
   "ball_chaser/DriveToTargetResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<DriveToTarget-response>)))
   "Returns md5sum for a message object of type '<DriveToTarget-response>"
-  "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+  "c8652349d2a34a90a09475339e2a93d9")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'DriveToTarget-response)))
   "Returns md5sum for a message object of type 'DriveToTarget-response"
-  "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+  "c8652349d2a34a90a09475339e2a93d9")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DriveToTarget-response>)))
   "Returns full string definition for message of type '<DriveToTarget-response>"
   (cl:format cl:nil "string msg_feedback~%~%~%"))

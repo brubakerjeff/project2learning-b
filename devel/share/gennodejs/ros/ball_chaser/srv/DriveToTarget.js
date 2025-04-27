@@ -22,7 +22,7 @@ class DriveToTargetRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.linear_x = null;
-      this.angular_x = null;
+      this.angular_z = null;
     }
     else {
       if (initObj.hasOwnProperty('linear_x')) {
@@ -31,11 +31,11 @@ class DriveToTargetRequest {
       else {
         this.linear_x = 0.0;
       }
-      if (initObj.hasOwnProperty('angular_x')) {
-        this.angular_x = initObj.angular_x
+      if (initObj.hasOwnProperty('angular_z')) {
+        this.angular_z = initObj.angular_z
       }
       else {
-        this.angular_x = 0.0;
+        this.angular_z = 0.0;
       }
     }
   }
@@ -44,8 +44,8 @@ class DriveToTargetRequest {
     // Serializes a message object of type DriveToTargetRequest
     // Serialize message field [linear_x]
     bufferOffset = _serializer.float64(obj.linear_x, buffer, bufferOffset);
-    // Serialize message field [angular_x]
-    bufferOffset = _serializer.float64(obj.angular_x, buffer, bufferOffset);
+    // Serialize message field [angular_z]
+    bufferOffset = _serializer.float64(obj.angular_z, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -55,8 +55,8 @@ class DriveToTargetRequest {
     let data = new DriveToTargetRequest(null);
     // Deserialize message field [linear_x]
     data.linear_x = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [angular_x]
-    data.angular_x = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [angular_z]
+    data.angular_z = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
@@ -71,14 +71,14 @@ class DriveToTargetRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4347bced3938630972acf1f24a183596';
+    return '6aa08055c0c4aea51799f3f7164796a8';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     float64 linear_x
-    float64 angular_x
+    float64 angular_z
     
     `;
   }
@@ -96,11 +96,11 @@ class DriveToTargetRequest {
       resolved.linear_x = 0.0
     }
 
-    if (msg.angular_x !== undefined) {
-      resolved.angular_x = msg.angular_x;
+    if (msg.angular_z !== undefined) {
+      resolved.angular_z = msg.angular_z;
     }
     else {
-      resolved.angular_x = 0.0
+      resolved.angular_z = 0.0
     }
 
     return resolved;
@@ -183,6 +183,6 @@ class DriveToTargetResponse {
 module.exports = {
   Request: DriveToTargetRequest,
   Response: DriveToTargetResponse,
-  md5sum() { return 'a3c0ad9fcd3cef3ad7f84f5f6a24dcfc'; },
+  md5sum() { return 'c8652349d2a34a90a09475339e2a93d9'; },
   datatype() { return 'ball_chaser/DriveToTarget'; }
 };

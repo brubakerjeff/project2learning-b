@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::ball_chaser::DriveToTarget > {
   static const char* value()
   {
-    return "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc";
+    return "c8652349d2a34a90a09475339e2a93d9";
   }
 
   static const char* value(const ::ball_chaser::DriveToTarget&) { return value(); }

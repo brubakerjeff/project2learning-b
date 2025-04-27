@@ -20,30 +20,30 @@
 
 (defclass ball_chaser::DriveToTargetRequest
   :super ros::object
-  :slots (_linear_x _angular_x ))
+  :slots (_linear_x _angular_z ))
 
 (defmethod ball_chaser::DriveToTargetRequest
   (:init
    (&key
     ((:linear_x __linear_x) 0.0)
-    ((:angular_x __angular_x) 0.0)
+    ((:angular_z __angular_z) 0.0)
     )
    (send-super :init)
    (setq _linear_x (float __linear_x))
-   (setq _angular_x (float __angular_x))
+   (setq _angular_z (float __angular_z))
    self)
   (:linear_x
    (&optional __linear_x)
    (if __linear_x (setq _linear_x __linear_x)) _linear_x)
-  (:angular_x
-   (&optional __angular_x)
-   (if __angular_x (setq _angular_x __angular_x)) _angular_x)
+  (:angular_z
+   (&optional __angular_z)
+   (if __angular_z (setq _angular_z __angular_z)) _angular_z)
   (:serialization-length
    ()
    (+
     ;; float64 _linear_x
     8
-    ;; float64 _angular_x
+    ;; float64 _angular_z
     8
     ))
   (:serialize
@@ -52,16 +52,16 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; float64 _linear_x
        (sys::poke _linear_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _angular_x
-       (sys::poke _angular_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _angular_z
+       (sys::poke _angular_z (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; float64 _linear_x
      (setq _linear_x (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _angular_x
-     (setq _angular_x (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _angular_z
+     (setq _angular_z (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
@@ -107,7 +107,7 @@
   :super ros::object
   :slots ())
 
-(setf (get ball_chaser::DriveToTarget :md5sum-) "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+(setf (get ball_chaser::DriveToTarget :md5sum-) "c8652349d2a34a90a09475339e2a93d9")
 (setf (get ball_chaser::DriveToTarget :datatype-) "ball_chaser/DriveToTarget")
 (setf (get ball_chaser::DriveToTarget :request) ball_chaser::DriveToTargetRequest)
 (setf (get ball_chaser::DriveToTarget :response) ball_chaser::DriveToTargetResponse)
@@ -115,26 +115,26 @@
 (defmethod ball_chaser::DriveToTargetRequest
   (:response () (instance ball_chaser::DriveToTargetResponse :init)))
 
-(setf (get ball_chaser::DriveToTargetRequest :md5sum-) "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+(setf (get ball_chaser::DriveToTargetRequest :md5sum-) "c8652349d2a34a90a09475339e2a93d9")
 (setf (get ball_chaser::DriveToTargetRequest :datatype-) "ball_chaser/DriveToTargetRequest")
 (setf (get ball_chaser::DriveToTargetRequest :definition-)
       "float64 linear_x
-float64 angular_x
+float64 angular_z
 ---
 string msg_feedback
 ")
 
-(setf (get ball_chaser::DriveToTargetResponse :md5sum-) "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+(setf (get ball_chaser::DriveToTargetResponse :md5sum-) "c8652349d2a34a90a09475339e2a93d9")
 (setf (get ball_chaser::DriveToTargetResponse :datatype-) "ball_chaser/DriveToTargetResponse")
 (setf (get ball_chaser::DriveToTargetResponse :definition-)
       "float64 linear_x
-float64 angular_x
+float64 angular_z
 ---
 string msg_feedback
 ")
 
 
 
-(provide :ball_chaser/DriveToTarget "a3c0ad9fcd3cef3ad7f84f5f6a24dcfc")
+(provide :ball_chaser/DriveToTarget "c8652349d2a34a90a09475339e2a93d9")
 
 

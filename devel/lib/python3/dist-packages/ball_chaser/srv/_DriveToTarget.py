@@ -8,13 +8,13 @@ import struct
 
 
 class DriveToTargetRequest(genpy.Message):
-  _md5sum = "4347bced3938630972acf1f24a183596"
+  _md5sum = "6aa08055c0c4aea51799f3f7164796a8"
   _type = "ball_chaser/DriveToTargetRequest"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """float64 linear_x
-float64 angular_x
+float64 angular_z
 """
-  __slots__ = ['linear_x','angular_x']
+  __slots__ = ['linear_x','angular_z']
   _slot_types = ['float64','float64']
 
   def __init__(self, *args, **kwds):
@@ -25,7 +25,7 @@ float64 angular_x
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       linear_x,angular_x
+       linear_x,angular_z
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -36,11 +36,11 @@ float64 angular_x
       # message fields cannot be None, assign default values for those that are
       if self.linear_x is None:
         self.linear_x = 0.
-      if self.angular_x is None:
-        self.angular_x = 0.
+      if self.angular_z is None:
+        self.angular_z = 0.
     else:
       self.linear_x = 0.
-      self.angular_x = 0.
+      self.angular_z = 0.
 
   def _get_types(self):
     """
@@ -55,7 +55,7 @@ float64 angular_x
     """
     try:
       _x = self
-      buff.write(_get_struct_2d().pack(_x.linear_x, _x.angular_x))
+      buff.write(_get_struct_2d().pack(_x.linear_x, _x.angular_z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -71,7 +71,7 @@ float64 angular_x
       _x = self
       start = end
       end += 16
-      (_x.linear_x, _x.angular_x,) = _get_struct_2d().unpack(str[start:end])
+      (_x.linear_x, _x.angular_z,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -85,7 +85,7 @@ float64 angular_x
     """
     try:
       _x = self
-      buff.write(_get_struct_2d().pack(_x.linear_x, _x.angular_x))
+      buff.write(_get_struct_2d().pack(_x.linear_x, _x.angular_z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -102,7 +102,7 @@ float64 angular_x
       _x = self
       start = end
       end += 16
-      (_x.linear_x, _x.angular_x,) = _get_struct_2d().unpack(str[start:end])
+      (_x.linear_x, _x.angular_z,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -246,6 +246,6 @@ def _get_struct_I():
     return _struct_I
 class DriveToTarget(object):
   _type          = 'ball_chaser/DriveToTarget'
-  _md5sum = 'a3c0ad9fcd3cef3ad7f84f5f6a24dcfc'
+  _md5sum = 'c8652349d2a34a90a09475339e2a93d9'
   _request_class  = DriveToTargetRequest
   _response_class = DriveToTargetResponse
